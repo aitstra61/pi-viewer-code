@@ -1,17 +1,17 @@
 #!/usr/bin/python
 #--------------------------------------
-#    ___  ___  _ ____          
-#   / _ \/ _ \(_) __/__  __ __ 
-#  / , _/ ___/ /\ \/ _ \/ // / 
-# /_/|_/_/  /_/___/ .__/\_, /  
-#                /_/   /___/   
+#    ___  ___  _ ____
+#   / _ \/ _ \(_) __/__  __ __
+#  / , _/ ___/ /\ \/ _ \/ // /
+# /_/|_/_/  /_/___/ .__/\_, /
+#                /_/   /___/
 #
 #  RetroPie Shutdown Button Script
 #
 # This script enables a RetroPie based
 # system to shutdown by pressing a button
 # without needing to use the menu.
-# 
+#
 # It uses the GpioZero library and is based on:
 # https://gpiozero.readthedocs.io/en/stable/recipes.html#shutdown-button
 #
