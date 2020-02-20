@@ -24,7 +24,7 @@ sleep 3
 
 # minimize the active window to keep the terminal from showing up
 
-xdotool getactivewindow windowminimize 
+xdotool getactivewindow windowminimize
 
 COUNTER=0
 while [ $COUNTER -lt 100000 ]; do
@@ -33,10 +33,9 @@ while [ $COUNTER -lt 100000 ]; do
    # videofile=$(ls -l|grep ".mp4"|wc -l);
    # if [ "$videofile" -ne "0" ]
    #  then
-      DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/cvlc -f -q --no-osd "/share" vlc://quit
+      DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/cvlc -f -q --no-osd "/share" vlc://quit;
    # fi
     let COUNTER=COUNTER+1;
     echo $COUNTER;
 done
 echo ""
-
