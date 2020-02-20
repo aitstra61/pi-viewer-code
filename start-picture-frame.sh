@@ -1,5 +1,5 @@
 #!/bin/bash
-wait_time=5 # seconds
+wait_time=15 # seconds
 echo ""
 ##export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;36m\] '
 echo ""
@@ -21,17 +21,20 @@ echo ""
 echo "OK, going to show the slides and videos, you had your chance!"
 
 sleep 3
-xdotool getactivewindow windowminimize
+
+# minimize the active window to keep the terminal from showing up
+
+xdotool getactivewindow windowminimize 
+
 COUNTER=0
 while [ $COUNTER -lt 100000 ]; do
     DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/feh -qZYFD8 --cycle-once /share;
     sleep 1;
-    #videofile=$(ls -l|grep .vid|wc -l);
-    #echo $videofile;
-    #if [ "$videofile" -ne "0" ]
-    # then
-    #  DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/cvlc -f -q --no-osd "/share" vlc://quit
-    #fi
+   # videofile=$(ls -l|grep ".mp4"|wc -l);
+   # if [ "$videofile" -ne "0" ]
+   #  then
+      DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/cvlc -f -q --no-osd "/share" vlc://quit
+   # fi
     let COUNTER=COUNTER+1;
     echo $COUNTER;
 done
